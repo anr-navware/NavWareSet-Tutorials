@@ -1,0 +1,7 @@
+# requirements.txt
+
+numpy>=1.26,<2.0
+pandas
+matplotlib
+open3d
+

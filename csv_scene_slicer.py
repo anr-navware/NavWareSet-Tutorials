@@ -15,7 +15,7 @@ mpl.rcParams['keymap.pan'] = []
 mpl.rcParams['keymap.zoom'] = []
 mpl.rcParams['keymap.quit'] = []
 
-scene = 21
+scene = 2
 
 # -----------------------------
 # Load CSV

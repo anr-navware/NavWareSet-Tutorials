@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import json
 import matplotlib as mpl
+import os
+
 
 # -----------------------------
 # Disable Matplotlib keybindings
@@ -20,8 +22,10 @@ scene = 21
 # -----------------------------
 if scene < 10:
     df = pd.read_csv(f"all_poses/0{scene}_poses/{scene}_robot_and_participants.csv")
+    OUTPUT_DIR = f"all_poses/0{scene}_poses/"   
 else:
     df = pd.read_csv(f"all_poses/{scene}_poses/{scene}_robot_and_participants.csv")
+    OUTPUT_DIR = f"all_poses/{scene}_poses/"
 
 robot_x = df["robot_x"].values
 robot_y = df["robot_y"].values
@@ -159,8 +163,9 @@ def save_slice(start_i, end_i, cols):
             f"from_{int(timestamps[start_i])}_to_{int(timestamps[end_i])}.csv"
         )
 
-    out.to_csv(fname, index=False)
-    print(f"Saved slice → {fname}")
+    out_path = os.path.join(OUTPUT_DIR, fname)
+    out.to_csv(out_path, index=False)
+    print(f"Saved slice → {out_path}")
 
 # -----------------------------
 # Keyboard handler

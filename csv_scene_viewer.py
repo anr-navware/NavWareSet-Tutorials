@@ -11,9 +11,9 @@ scene = 13  # Change this to the desired scene number
 
 # Load CSV file
 if scene < 10:
-    df = pd.read_csv(f"/home/jsouzasoar/annotation_example/0{scene}_poses/{scene}_robot_and_participants.csv")
+    df = pd.read_csv(f"{scene}_poses/{scene}_robot_and_participants.csv")
 else:
-    df = pd.read_csv(f"/home/jsouzasoar/annotation_example/{scene}_poses/{scene}_robot_and_participants.csv")
+    df = pd.read_csv(f"{scene}_poses/{scene}_robot_and_participants.csv")
 
 # Extract robot data
 robot_x = df["robot_x"].values
@@ -29,10 +29,10 @@ for i in range(1, 6):
 
 # Load occupancy points
 if scene < 10:
-    with open(f"/home/jsouzasoar/annotation_example/0{scene}_poses/{scene}_occupancy_xy_points.json", "r") as f:
+    with open(f"{scene}_poses/{scene}_occupancy_xy_points.json", "r") as f:
         occupancy_data = json.load(f)
 else:
-    with open(f"/home/jsouzasoar/annotation_example/{scene}_poses/{scene}_occupancy_xy_points.json", "r") as f:
+    with open(f"{scene}_poses/{scene}_occupancy_xy_points.json", "r") as f:
         occupancy_data = json.load(f)
 
 # Extract occupancy points
